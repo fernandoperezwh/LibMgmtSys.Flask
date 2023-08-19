@@ -35,3 +35,5 @@ Start development server with the next command.
 ```bash
 flask --app manage run
 ```
+
+Import the Postman collection (`postman_collection.json`) to test the endpoints of this project.
