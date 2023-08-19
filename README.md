@@ -22,6 +22,13 @@ with app.app_context():
     db.create_all()
 ```
 
+[Optional] Load dummy data to the database
+```bash
+sqlite3 instance/db.sqlite3 < src/.config/fixtures/dump_authors.sql
+sqlite3 instance/db.sqlite3 < src/.config/fixtures/dump_editorial.sql
+sqlite3 instance/db.sqlite3 < src/.config/fixtures/dump_book.sql
+```
+
 ## Usage
 
 Start development server with the next command.
