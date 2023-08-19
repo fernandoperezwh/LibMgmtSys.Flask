@@ -59,17 +59,20 @@ class DetailApiView(MethodView):
         serializer = self.serializer()
         return jsonify(serializer.dump(item))
 
-#     def patch(self, id):
-#         item = self._get_item(id)
-#         errors = self.validator.validate(item, request.json)
-#
-#         if errors:
-#             return jsonify(errors), 400
-#
-#         item.update_from_json(request.json)
-#         db.session.commit()
-#         return jsonify(item.to_json())
-#
+    def put(self, id):
+        # Validamos los datos que nos provee el usuario
+        form = self.form()
+        if not form.validate_on_submit():
+            return jsonify(form.errors), 400
+        # Actualizar los campos de la instancia con los valores del diccionario
+        instance = self._get_item(id)
+        for key, value in request.json.items():
+            setattr(instance, key, value)
+        db.session.commit()
+        # Despues de guardar serializamos la instancia para devolver como respuesta
+        serializer = self.serializer()
+        return jsonify(serializer.dump(instance))
+
     def delete(self, id):
         item = self._get_item(id)
         db.session.delete(item)
