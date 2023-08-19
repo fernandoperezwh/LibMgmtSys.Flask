@@ -86,6 +86,42 @@
 					"response": []
 				},
 				{
+					"name": "Update author by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Fernando\",\n    \"last_name\": \"Perez\",\n    \"email\": \"fernando@clickbank.net1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/authors/1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"authors",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Delete author by ID",
 					"request": {
 						"method": "DELETE",
@@ -188,6 +224,42 @@
 					"response": []
 				},
 				{
+					"name": "Update editorial by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": null,\n    \"city\": \"Lugu\",\n    \"country\": null,\n    \"id\": 1,\n    \"name\": \"Editorial El Jardin\",\n    \"state\": null,\n    \"website\": \"https://prnewswire.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/editorials/1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"editorials",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Delete editorial by ID",
 					"request": {
 						"method": "DELETE",
@@ -283,6 +355,42 @@
 							"port": "5000",
 							"path": [
 								"books",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update book by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cover\": \"https://media.harrypotter.com/cover\",\n    \"id\": 1,\n    \"publish_date\": null,\n    \"title\": \"Harry Potter\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/books/1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"books",
+								"1",
 								""
 							]
 						}
